@@ -1,0 +1,39 @@
+#include <stdio.h>
+#include <math.h>
+
+int main(){
+    
+    // two nested loops
+    //then find the x distance
+    //then find the minimumm height
+    // then compute the area and compare to max 
+    // print amount of water that can be stored
+    
+    
+    int heightSize;
+    //hardcoded for testing
+    int height[]={1,8,6,2,5,4,8,3,7};
+    int max = 0;
+    int area = 0;
+    
+    //prompting the user to enter the heightsize
+    printf("enter the height size");
+    scanf("%d", &heightSize);
+    
+    //nested loops to calculate the max water amount
+    for(int i = 0; i < heightSize; i++){
+        for(int j = i+1; j<heightSize;j++){
+            //finding the minimum height
+            double minimum = fmin(height[i], height[j]);
+           area = (j-i) * minimum;
+           if(area>max){
+               max = area;
+           }
+        }
+    }
+    
+    //printing the max area
+    
+    printf("the maximum amount of water is %d", max);
+    
+}
