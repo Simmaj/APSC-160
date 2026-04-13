@@ -34,7 +34,7 @@ int checkflower(int data[][3], int row, int col, int maxrows, int maxcols)
     int result;
     bool adjacentflower = false;
     
-    if(row-1>0){
+    if(row-1>=0){
         if(data[row-1][col]==1){
             adjacentflower = true;
         }
@@ -52,7 +52,7 @@ int checkflower(int data[][3], int row, int col, int maxrows, int maxcols)
         }
     }
     
-    if(col-1>0){
+    if(col-1>=0){
         if(data[row][col-1]==1){
             adjacentflower = true;
         }
